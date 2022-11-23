@@ -51,8 +51,10 @@ body {
 }
 
 .firstpage {
-    border: 1px solid brown;
+    /* border: 1px solid brown; */
+    display: flex;
     height: 75%;
+    justify-content: center;
 }
 
 
@@ -68,4 +70,33 @@ body {
     margin-left: 1rem;
     width: 1.5rem;
     height: 1.5rem;
+}
+/* ---------- First Page Content------------ */
+
+.container {
+    display: flex;
+    border: 1px solid blue;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
+
+#commercetext {
+    display: flex;
+    border: 1px solid red;
+    margin: 2rem;
+}
+
+#order_btt {
+    margin: 2rem;
+}
+
+.contact {
+    border: 1px solid green;
+    margin: 5rem;
 }
