@@ -1,1 +1,1 @@
-console.log("HERE");
+(()=>{"use strict";(()=>{let e=document.getElementById("content"),t=document.createElement("div");t.className="head";let n=document.createElement("div");n.setAttribute("id","pagename"),n.textContent="Pizzeria Coazz",t.appendChild(n),e.appendChild(t)})()})();
