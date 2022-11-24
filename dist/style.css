@@ -60,10 +60,10 @@ li{
     align-items: center;
 }
 
-.firstpage {
+.pagecontent {
     /* border: 1px solid brown; */
     display: flex;
-    height: 75%;
+    height: 100%;
     justify-content: center;
     
 }

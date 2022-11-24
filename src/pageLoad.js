@@ -1,15 +1,18 @@
 
+import { createHTMLElement } from './basic';
 
+
+const tabs = ["Home", "Menu", "Wines"];
 
 const pageLoad = () => {
     // Get the Content of the Page
     const content = document.getElementById("content");
     const head = headLoad();
     const foot = footLoad();
-    const first_page = fpageLoad();
+    const blank_space = createHTMLElement("div", "pagecontent")
 
 
-    content.append(head, first_page, foot);
+    content.append(head, blank_space, foot);
 
 
 }
@@ -26,13 +29,13 @@ const headLoad =  () =>{
     let ul_list = createHTMLElement("ul", "tabs");
 
 
-    const tabs = ["Home", "Menu", "Wines"];
 
     // For every tab make a list element and add a click function to it
     //TODO Evenetuel adde hier den document event listener
     for (let i = 0; i < tabs.length; i++){
 
         let li_element = createHTMLElement("li",undefined ,undefined ,tabs[i]);
+        li_element.dataset.tab = tabs[i];
         ul_list.appendChild(li_element);
     }
 
@@ -82,60 +85,5 @@ const footLoad = () => {
 
 }
 
-const fpageLoad = () => {
 
-    // Create fpage div and pagecontent div
-    let f_page = createHTMLElement("div", "firstpage");
-    let page_content = createHTMLElement("div", "container");
-
-    // Create the greeting text and create also the p text, and a button to order
-    let c_text = createHTMLElement("div", "", "commercetext", "Your Italian Restaurant in the middle of Vienna !");
-    let info_text = createHTMLElement("p", "", "infotext", `
-    From Monday to Friday between 12:00 and 15:00, our Business Lunch awaits you with an excellent selection of daily changing hot dishes. 
-    For only €12.90, our offer is the ideal lunch to choose from pizzas, pasta dishes and many more. 
-    The same applies to the variety of drinks that can be conveniently ordered in addition.
-    `);
-
-    let order_btt = createHTMLElement("button", "", "order_btt", "Order now !")
-
-
-    let contact = createHTMLElement("div", "contact");
-    contact.innerHTML = `
-        <div id="contacthead">Contact Information</div>
-        <div><strong>Adress</strong></div>
-        <div>${"443 Knickerbocker Ave, Brooklyn, NY 11237, United States"}</div>
-        <div><strong>Phone Number </strong></div>
-        <div>${"+17184559664"}</div>
-        <div><strong>Owner</strong></div>
-        <div>${"Luigi"}</div>
-    `
-
-
-    // Append everything to page content
-    page_content.append(c_text, info_text, order_btt, contact);
-
-
-
-    f_page.append(page_content);
-
-
-    return f_page;
-
-
-}
-
-const createHTMLElement = (type="div", class_name, id_name, innertext) =>{
-
-    let element = document.createElement(type);
-
-    if (class_name)  element.className = class_name;
-    if (id_name)  element.setAttribute("id", id_name);
-    if (innertext)  element.textContent = innertext;
-    
-    return element;
-
-
-}
-
-
-export { pageLoad };
+export { pageLoad, tabs};
