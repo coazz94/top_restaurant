@@ -70,7 +70,7 @@ li{
 
 
 /* ----------FOOTER------------ */
-.footer {
+footer {
     display: flex;
     /* border: 1px solid green; */
     justify-content: center;
