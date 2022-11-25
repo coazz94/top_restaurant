@@ -12,7 +12,7 @@ const pagecontent = document.querySelector(".pagecontent");
 
 
 // on First load the homepage
-pagecontent.append(homepage);
+pagecontent.append(menupage);
 
 
 document.querySelectorAll("li").forEach((e)=>{
