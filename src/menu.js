@@ -6,17 +6,19 @@ import { createHTMLElement } from './basic';
 const menuLoad = () => {
 
     // Create fpage div and pagecontent div
-    let page_content = createHTMLElement("div", "container");
+    let page_content = createHTMLElement("div", "test");
     // Change the style to grid
     // page_content.style
 
-    // console.log(burger_menu.getLength())
 
     // Add here the text to the divs
     for(let i = 0; i < burger_menu.getLength(); i++){
-        console.log("HERE")
-        let test = createHTMLElement("div", "", "", burger_menu[i]);
-        page_content.append(test);
+        let product = createHTMLElement("div", "", `menu_${i}`);
+        let name = createHTMLElement("div", "", "", burger_menu.getElement(i).name);
+        let ingridents = createHTMLElement("div", "", "", burger_menu.getElement(i).ingridents);
+        let price = createHTMLElement("div", "", "", burger_menu.getElement(i).price);
+        product.append(name, ingridents, price);
+        page_content.append(product);
     }
 
 
@@ -50,12 +52,20 @@ class Menu {
     getLength(){
         return this.menu.length
     }
+
+    getElement(i){
+        return this.menu[i];
+    }
 }
 
 const burger = [
     ["Hamburger", ["bun", "ground beef 150g", "pickles", "ketchup"], 5.99],
     ["Cheeseburger", ["bun", "ground beef 150g", "cheese", "pickles", "ketchup"], 6.99],
-    ["RoyalBurger", ["bun", "2 x ground beef 180g", "cheese", "pickles", "ketchup"], 7.99]
+    ["Royal Burger", ["bun", "2 x ground beef 180g", "cheese", "pickles", "ketchup"], 7.99],
+    ["Big Burger", ["bun", "3 x ground beef 180g", "2 x cheese", "ketchup"], 8.99],
+    ["Messi Burger", ["bun", "2 x ground beef 180g", "cheese", "ham", "ketchup"], 8.49],
+    ["Djokovic Burger", ["bun", "2 x vegan beef 180g", "vegan cheese", "pickles", "ketchup"], 9.99],
+    ["Ronaldo Burger", ["bun", "2 x ground beef 180g", "cheese", "pickles", "ketchup"], 8.79]
 ]
 
 let burger_menu = new Menu()
