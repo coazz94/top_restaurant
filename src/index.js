@@ -4,6 +4,9 @@ import { homeLoad } from './home';
 import { menuLoad } from './menu.js';
 import { wineLoad } from './wine';
 
+// Import the css
+import './styles.css';
+
 pageLoad(); // this should work as expected!
 const homepage = homeLoad();
 const menupage = menuLoad();
