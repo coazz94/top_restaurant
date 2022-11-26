@@ -12,15 +12,15 @@ const pagecontent = document.querySelector(".pagecontent");
 
 
 // on First load the homepage
-pagecontent.append(menupage);
+pagecontent.append(homeLoad());
 
-
+// Add a eventlistener to every list element
 document.querySelectorAll("li").forEach((e)=>{
     e.addEventListener("click", () => loadPage(e.dataset.tab));
 })
 
 
-
+// Load the Page requested
 const loadPage = (pagename) => {
     pagecontent.innerHTML = "";
     if(pagename === tabs[0]){

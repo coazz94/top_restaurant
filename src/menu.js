@@ -10,6 +10,8 @@ const menuLoad = () => {
     // Change the style to grid
     // page_content.style
 
+    let heading = createHTMLElement("div", "headx", "", "The best Burgers in Vienna:");
+    page_content.append(heading)
 
     // Add here the text to the divs
     for(let i = 0; i < burger_menu.getLength(); i++){
@@ -59,6 +61,12 @@ class Menu {
 }
 
 const burger = [
+    ["Hamburger", ["bun", "ground beef 150g", "pickles", "ketchup"], 5.99],
+    ["Cheeseburger", ["bun", "ground beef 150g", "cheese", "pickles", "ketchup"], 6.99],
+    ["Royal Burger", ["bun", "2 x ground beef 180g", "cheese", "pickles", "ketchup"], 7.99],
+    ["Big Burger", ["bun", "3 x ground beef 180g", "2 x cheese", "ketchup"], 8.99],
+    ["Messi Burger", ["bun", "2 x ground beef 180g", "cheese", "ham", "ketchup"], 8.49],
+    ["Djokovic Burger", ["bun", "2 x vegan beef 180g", "vegan cheese", "pickles", "ketchup"], 9.99],
     ["Hamburger", ["bun", "ground beef 150g", "pickles", "ketchup"], 5.99],
     ["Cheeseburger", ["bun", "ground beef 150g", "cheese", "pickles", "ketchup"], 6.99],
     ["Royal Burger", ["bun", "2 x ground beef 180g", "cheese", "pickles", "ketchup"], 7.99],
